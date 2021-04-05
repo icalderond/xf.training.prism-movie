@@ -1,7 +1,7 @@
 ﻿using System;
 namespace PrismMovie.ViewModels
 {
-    public class SearchViewModel
+    public class SearchViewModel : BindableBase
     {
         public SearchViewModel()
         {

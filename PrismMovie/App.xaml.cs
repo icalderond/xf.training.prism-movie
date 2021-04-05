@@ -1,4 +1,5 @@
 ﻿using System;
+using PrismMovie.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace PrismMovie
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new SearchPage());
         }
 
         protected override void OnStart()

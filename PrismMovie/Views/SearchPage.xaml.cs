@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using PrismMovie.ViewModels;
 using Xamarin.Forms;
 
 namespace PrismMovie.Views
@@ -10,6 +10,7 @@ namespace PrismMovie.Views
         public SearchPage()
         {
             InitializeComponent();
+            this.BindingContext = new SearchViewModel();
         }
     }
 }
