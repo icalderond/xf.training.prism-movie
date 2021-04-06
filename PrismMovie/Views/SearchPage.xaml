@@ -2,10 +2,11 @@
 <ContentPage
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="PrismMovie.Views.SearchPage">
+    xmlns:iOS="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    x:Class="PrismMovie.Views.SearchPage"
+    NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout VerticalOptions="Center" Padding="10,10,10,50">
-            <!--<SearchBar x:Name="searchBar" Placeholder="Search movie here" />-->
             <Entry x:Name="searchBar" Placeholder="Search movie here"/>
             <Button Text="Search" Command="{Binding SearchMovieCommand}" CommandParameter="{Binding Source={x:Reference searchBar}, Path=Text}"/>
         </StackLayout>

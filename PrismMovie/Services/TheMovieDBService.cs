@@ -38,6 +38,12 @@ namespace PrismMovie.Services
                     var jsonResult = jsonParsed["results"].ToString();
 
                     results = JsonConvert.DeserializeObject<List<Movie>>(jsonResult);
+
+                    results.ForEach(x =>
+                    {
+                        x.BackdropPath = APIMethods.ServerImageBase + x.BackdropPath;
+                        x.PosterPath = APIMethods.ServerImageBase + x.PosterPath;
+                    });
                 }
                 return results;
             }
