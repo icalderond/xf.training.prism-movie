@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using PrismMovie.ViewModels;
+﻿using PrismMovie.ViewModels;
 using Xamarin.Forms;
 
 namespace PrismMovie.Views
