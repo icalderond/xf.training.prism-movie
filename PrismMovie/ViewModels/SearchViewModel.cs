@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.ObjectModel;
-using PrismMovie.Models;
-using PrismMovie.Services;
-using PrismMovie.Views;
 
 namespace PrismMovie.ViewModels
 {
@@ -31,7 +27,7 @@ namespace PrismMovie.ViewModels
                     if (string.IsNullOrWhiteSpace(param))
                         throw new Exception("Favor de escribir el texto de busqueda");
 
-                    await App.Current.MainPage.Navigation.PushAsync(new MovieResultPage(param));
+                    //await App.Current.MainPage.Navigation.PushAsync(new MovieResultPage(param));
                 }
                 catch (Exception ex)
                 {
