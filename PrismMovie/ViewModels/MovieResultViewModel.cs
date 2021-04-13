@@ -1,16 +1,15 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using Prism.Mvvm;
+using Prism.Navigation;
 using PrismMovie.Models;
 using PrismMovie.Services;
 
 namespace PrismMovie.ViewModels
 {
-    public class MovieResultViewModel : BindableBase
+    public class MovieResultViewModel : BindableBase, INavigatedAware
     {
-        public MovieResultViewModel(string _query)
-        {
-            SearchMovieAsync(_query);
-        }
+        public MovieResultViewModel() { }
 
         #region Properties
         private TheMovieDBService _TheMovieDBService;
@@ -25,7 +24,6 @@ namespace PrismMovie.ViewModels
             get => _MovieList;
             set => SetProperty(ref _MovieList, value);
         }
-
         #endregion Properties
 
         #region Methods
@@ -39,6 +37,17 @@ namespace PrismMovie.ViewModels
             catch (Exception)
             {
                 throw;
+            }
+        }
+
+        public void OnNavigatedFrom(INavigationParameters parameters) { }
+
+        public void OnNavigatedTo(INavigationParameters parameters)
+        {
+            if (parameters.ContainsKey("query"))
+            {
+                var query = parameters.GetValue<string>("query");
+                SearchMovieAsync(query);
             }
         }
         #endregion Methods

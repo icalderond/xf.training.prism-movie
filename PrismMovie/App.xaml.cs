@@ -1,4 +1,5 @@
-﻿using Prism;
+﻿using System;
+using Prism;
 using Prism.Ioc;
 using Prism.Unity;
 using PrismMovie.Helpers;
@@ -17,7 +18,7 @@ namespace PrismMovie
         protected override void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync($"{Pages.NavigationPage}/{Pages.Search}");
+            NavigationService.NavigateAsync(new Uri($"/{Pages.NavigationPage}/{Pages.Search}", UriKind.Absolute));
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

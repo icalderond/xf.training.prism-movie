@@ -1,5 +1,4 @@
-﻿using System;
-namespace PrismMovie.Helpers
+﻿namespace PrismMovie.Helpers
 {
     public class APIMethods
     {
